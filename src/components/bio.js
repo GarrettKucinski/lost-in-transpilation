@@ -1,52 +1,6 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
-const Bio = () => {
-  return (
-    <StaticQuery
-      query={bioQuery}
-      render={data => {
-        const { author, social } = data.site.siteMetadata
-        return (
-          <div
-            style={{
-              display: `flex`,
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
-            </p>
-          </div>
-        )
-      }}
-    />
-  )
-};
 
 const bioQuery = graphql`
   query BioQuery {
@@ -68,4 +22,26 @@ const bioQuery = graphql`
   }
 `;
 
-export default Bio
+const bioContent = data => {
+  const { author, social } = data.site.siteMetadata
+  return (
+    <div>
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author}
+      />
+      <p>
+        Written by <strong>{author}</strong>. Dad, author, developer, awesome guy.
+        <a href={`https://twitter.com/${social.twitter}`}>
+          You should follow him on Twitter
+        </a>
+      </p>
+    </div>
+  )
+};
+
+const Bio = () => {
+  return <StaticQuery query={bioQuery} render={bioContent} />;
+};
+
+export default Bio;

@@ -3,7 +3,7 @@ module.exports = {
     title: `Lost in Transpilation`,
     author: `Garrett Kucinski`,
     description: `Ramblings of a Senior Developer`,
-    siteUrl: `https://infallible-johnson-05d828.netlify.com`,
+    siteUrl: `https://www.lostintranspilation.com`,
     social: {
       twitter: `realgarrettk`,
     },
@@ -50,18 +50,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-153172359-1`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Lost in Transpilation`,
+        short_name: `LostInTranspilation`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#011C40`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },

@@ -7,33 +7,25 @@ import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ pageContext, data, location }) => {
   const { markdownRemark, site } = data;
-  const post = markdownRemark
-  const siteTitle = site.siteMetadata.title
+  const { excerpt, html, frontmatter } = markdownRemark
+
+  const { title: postTitle, description, date } = frontmatter;
+  const { siteMetadata: { title: siteTitle } } = site;
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={postTitle}
+        description={description || excerpt}
       />
-      <h1>{post.frontmatter.title}</h1>
-      <p style={{ display: `block` }}>
-        {post.frontmatter.date}
-      </p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <h1>{postTitle}</h1>
+      <p>{date}</p>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
       <hr />
       <Bio />
 
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+      <ul>
         <li>
           {previous && (
             <Link to={previous.fields.slug} rel="prev">
