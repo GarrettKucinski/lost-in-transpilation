@@ -36,9 +36,15 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = allMarkdownRemark.edges
 
-  posts.forEach(({ node: { fields: { slug }}}, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  posts.forEach(({ node: { fields: { slug } } }, index) => {
+    const previousPostIndex = index + 1
+    const nextPostIndex = index - 1
+
+    const isEndOfPosts = index === posts.length - 1
+    const isFirstPost = index === 0
+
+    const previous = isEndOfPosts ? null : posts[previousPostIndex].node
+    const next = isFirstPost ? null : posts[nextPostIndex].node
 
     createPage({
       path: slug,
