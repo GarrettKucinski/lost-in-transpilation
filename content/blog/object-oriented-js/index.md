@@ -7,14 +7,15 @@ date: "2019-06-09"
 
 This post is going to assume you have learned a few basics already. Things like variables, data structures, and functions. And inevitably you have come across the subject of inheritance.
 
-A quick Google search later and you’re up to your IDE in a whole host of things that teach you how to do inheritance in JavaScript.
+A quick Google search later and you’re up to your IDE in a whole host of articles that teach you how to do inheritance in JavaScript.
 
 Those things might look a little something like this:
 
-```javascript
+```javascript{numberLines: true}
 function Cat(sound) {
   this.sound = sound;
 }
+
 Cat.prototype.makeSound = function() {
   console.log(this.sound);
 }
@@ -25,7 +26,7 @@ leopard.makeSound(); // ROAR!
 
 More recently (if you’re familiar with ES6) they may even look like this:
 
-```javascript
+```javascript{numberLines: true}
 class Cat {
   constructor(sound) {
     this.sound = sound;
@@ -40,7 +41,7 @@ const leopard = new Cat('ROAR!');
 leopard.makeSound(); // ROAR!
 ```
 
-Right about now you’re probably saying to yourself “yeah, so what? That’s like, prototypal inheritance brah…”.
+> Right about now you’re probably saying to yourself “yeah, so what? That’s just like, prototypal inheritance, man…”
 
 Except it’s not.
 

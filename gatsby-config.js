@@ -58,7 +58,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Lost in Transpilation',
-        short_name: 'LostInTranspilation',
+        short_name: 'LIT',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#011C40',
