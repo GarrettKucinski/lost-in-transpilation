@@ -7,22 +7,38 @@ const theme = {
   blue: '#011C40',
   altBlue: '#175073',
   paper: '#fff8ef',
-  cream: '#F2EFC4',
-  yellow: '#F27B13',
+  lightFlamingo: '#fdf0f0',
+  flamingo: '#f7dfdf',
+  lemon: '#F2EFC4',
+  orange: '#F27B13',
+  jsYellow: '#FFEB3B',
   red: '#A60303',
-  textGray: '#3a3a3a'
+  textGray: '#3a3a3a',
+  borderGray: '#cccccc'
 }
 
 const GlobalStyle = createGlobalStyle`
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: yrsa, sans-serif;
     font-size: 1.5rem;
     line-height: 1.5;
-    color: ${p => p.theme.textGray};
-    background: ${p => p.theme.paper};
+    color: ${p => p.theme.blue};
+    background: #efefef;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
   }
 
   h1,h2,h3 {
+    color: ${p => p.theme.blue};
     font-family: bree, sans-serif;
   }
 
@@ -31,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${p => p.theme.yellow};
+    color: ${p => p.theme.altBlue};
     text-decoration: none;
   }
 
@@ -40,9 +56,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 40px 0;
     padding: 0 40px;
     font-style: italic;
-    color: #3c3c3c;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    color: ${p => p.theme.altBlue};
+    border-top: 1px solid ${p => p.theme.red};
+    border-bottom: 1px solid ${p => p.theme.red};
     font-family: basic-sans, sans-serif;
   }
 `
@@ -58,10 +74,16 @@ const ContentSection = styled.main`
 `
 
 const HeaderWrapper = styled.hgroup`
+  min-height: 100px;
+  background: ${p => p.theme.textGray};
+
   .header {
     &--title {
-      font-family: sans-serif;
-      text-align: center;
+      font-family: basic-sans, sans-serif;
+      font-weight: 300;
+      a {
+        color: ${p => p.theme.lemon};
+      }
     }
   }
 `

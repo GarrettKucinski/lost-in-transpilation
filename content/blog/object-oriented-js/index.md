@@ -1,11 +1,12 @@
 ---
 title: "Object Oriented Javascript: An Inherited Problem"
 date: "2019-06-09"
+description: "JavaScript has a great many ways to create an object, some better than others. This post is going to walk through a few of those various object creation methods and the reasoning behind their use."
 ---
 
 ## Hello World...
 
-This post is going to assume you have learned a few basics already. Things like variables, data structures, and functions. And inevitably you have come across the subject of inheritance.
+I'm going to assume you have learned a some of the JavaScript basics already. Things like variables, data structures, and functions. In your travels, inevitably you will have come across the subject of inheritance.
 
 A quick Google search later and you’re up to your IDE in a whole host of articles that teach you how to do inheritance in JavaScript.
 
@@ -45,12 +46,8 @@ leopard.makeSound(); // ROAR!
 
 Except it’s not.
 
-What you see above is a hacky workaround and a leaky abstraction at best, both meant to *simulate classical inheritance patterns*.
+The above is sort of a hacky workaround and a leaky abstraction at best, both meant to *simulate classical inheritance patterns*.
 
-Does it make use of the prototype? Sure it does… it sets the prototype, and will do what’s it’s meant to. But it’s hardly the best or most efficient way and is not idiomatic JavaScript.
-
-A lot of developers coming to JavaScript from other languages are incensed that this little upstart language dares to buck the tried and true tradition of classical inheritance models. As such, things like the above get jammed into the spec whether they make sense or not.
+While it make use of the prototype and will do the thing it's meant to do, it’s hardly the best or most efficient way and is not actually idiomatic JavaScript.
 
 ## A more desirable Object…
-
-A lot of developers coming to JavaScript from other languages are incensed that this little upstart language dares to buck the tried and true tradition of classical inheritance models. As such, things like the above get jammed into the spec whether they make sense or not.
